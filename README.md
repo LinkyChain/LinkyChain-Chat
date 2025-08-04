@@ -60,7 +60,7 @@ Welcome to **LinkyChainChat**\! This isn't just another chat app. It's a real-ti
     ```
 
 3.  **Configure environment variables:**
-    Create a `.env` file in the project root and add the following:
+    Create a `.env.local` file in the project root and add the following:
 
     ```bash
     # MongoDB connection URI
