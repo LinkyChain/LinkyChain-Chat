@@ -19,6 +19,7 @@ module.exports = {
           'green-500': '#3cb371',
           'red-500': '#ef4444',
           'blue-757': '#6AA0F1',
+          'yellow-767': '#f8f7b0',
           'yellow-500': '#fee75c',
           'mention-blue': '#4752c4',
           'mention-hover': '#4f5bde',

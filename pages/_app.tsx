@@ -19,7 +19,8 @@ import {
   faKeyboard, faTrashAlt,
   faClock,
   faBomb,
-  faCircleInfo
+  faCircleInfo,
+  faCat
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGrinSquint, faSadTear, faThumbsUp, faHeart, faLaughSquint
@@ -1914,6 +1915,10 @@ const formatCountdown = (seconds: number) => {
                 <FontAwesomeIcon icon={faShieldVirus} className="text-linkychain-green-500" />
                 <span>(LAM)</span>
               </div>
+              <a href="https://github.com/LinkyChain/LinkyChain-Chat" className="flex items-center gap-2" title="Project Source Code" target="_blank">
+  <FontAwesomeIcon icon={faCat} className="text-linkychain-yellow-767" />
+  <span>Source Code</span>
+</a>
             </div>
           </header>
 
