@@ -1,0 +1,316 @@
+
+🐾 neko-cli package lock 🐾
+
+dependencies:
+🐱 :
+  🔖 version: "babel/preset-env"
+  📦 resolved: "https://registry.npmjs.org//-/-babel/preset-env.tgz"
+  🔒 integrity: "sha512-XoUyDFD+tCbyN/1PdVTxyZY5DcOddco7dYIgF6QbhBUzYrydJbehGHHhN6Ldfa9YkNcBw6SXesNxbVEjkYMN1w=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "fortawesome/fontawesome-svg-core"
+  📦 resolved: "https://registry.npmjs.org//-/-fortawesome/fontawesome-svg-core.tgz"
+  🔒 integrity: "sha512-g5CNqX8KOrtRhO1QCWOdPiKYX3csgEXWdVp2FVXLb5sNKa2+3JViYiv8SBeN0Qbvm4CKwuf9i+oEN9JiYvJUMg=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "fortawesome/free-brands-svg-icons"
+  📦 resolved: "https://registry.npmjs.org//-/-fortawesome/free-brands-svg-icons.tgz"
+  🔒 integrity: "sha512-Dsl4s1+N1+NPkA3Lc7mpZhzaVZ2H2RL8vcJ18EE4p9/g7ZTJxhTDqh2Yn1laxW9mn1z2slqHALji9L/YXbv4fA=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "fortawesome/free-regular-svg-icons"
+  📦 resolved: "https://registry.npmjs.org//-/-fortawesome/free-regular-svg-icons.tgz"
+  🔒 integrity: "sha512-qmJrmBecPI5/tqy3Sa117mVNMz3yXbdcsH/4+AUEetWzGYuUcOwwoFQwC5zh2UaNbhhFrlBiqr2P849FBqU4aQ=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "fortawesome/free-solid-svg-icons"
+  📦 resolved: "https://registry.npmjs.org//-/-fortawesome/free-solid-svg-icons.tgz"
+  🔒 integrity: "sha512-bn9aPosZdqhoyYBr8dU753Moe3ZJyNlYJ0fEjucjquJTdfzOcDDR7pGcz0wl2W/bpNX65O2KwyKAL0nejywguw=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "fortawesome/react-fontawesome"
+  📦 resolved: "https://registry.npmjs.org//-/-fortawesome/react-fontawesome.tgz"
+  🔒 integrity: "sha512-a2jCUHkvwi8uL7NrRil9ctEU6sdqLXW59Yc/m71ev2RegDPBX05Tff2RAhDIgyYeLyZxTpcniS7JuJuQ6mPn4g=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "giphy/react-components"
+  📦 resolved: "https://registry.npmjs.org//-/-giphy/react-components.tgz"
+  🔒 integrity: "sha512-msEQAe22QCws1vNbJHqSgWlXkJ5sWjW6Dy5i+QioGunEbej+HuLfaU94viVCYvC3ga1a8C7p93ElvAgsCw30UQ=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "tailwindcss/postcss"
+  📦 resolved: "https://registry.npmjs.org//-/-tailwindcss/postcss.tgz"
+  🔒 integrity: "sha512-jdZtNGTvyxxzvTLq0A9cevifQLQZwIXQbVVjR0Z1bM3oKhEyPne0avx5eJKrbJtUrE7WisdjP2OoQyFOgQAG9A=="
+  ⚙️ type: runtime
+
+🐱 babel-loader:
+  🔖 version: "^10.0.0"
+  📦 resolved: "https://registry.npmjs.org/babel-loader/-/babel-loader-^10.0.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 crypto-js:
+  🔖 version: "^4.2.0"
+  📦 resolved: "https://registry.npmjs.org/crypto-js/-/crypto-js-^4.2.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 emoji-picker-react:
+  🔖 version: "^4.13.2"
+  📦 resolved: "https://registry.npmjs.org/emoji-picker-react/-/emoji-picker-react-^4.13.2.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 express:
+  🔖 version: "^5.1.0"
+  📦 resolved: "https://registry.npmjs.org/express/-/express-^5.1.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 formidable:
+  🔖 version: "^3.5.4"
+  📦 resolved: "https://registry.npmjs.org/formidable/-/formidable-^3.5.4.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 framer-motion:
+  🔖 version: "^12.23.12"
+  📦 resolved: "https://registry.npmjs.org/framer-motion/-/framer-motion-^12.23.12.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 gsap:
+  🔖 version: "^3.13.0"
+  📦 resolved: "https://registry.npmjs.org/gsap/-/gsap-^3.13.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 howler:
+  🔖 version: "^2.2.4"
+  📦 resolved: "https://registry.npmjs.org/howler/-/howler-^2.2.4.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 marked:
+  🔖 version: "^16.1.1"
+  📦 resolved: "https://registry.npmjs.org/marked/-/marked-^16.1.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 mime-types:
+  🔖 version: "^3.0.1"
+  📦 resolved: "https://registry.npmjs.org/mime-types/-/mime-types-^3.0.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 mongodb:
+  🔖 version: "^6.18.0"
+  📦 resolved: "https://registry.npmjs.org/mongodb/-/mongodb-^6.18.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 mongoose:
+  🔖 version: "^8.17.0"
+  📦 resolved: "https://registry.npmjs.org/mongoose/-/mongoose-^8.17.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 next:
+  🔖 version: "^15.4.5"
+  📦 resolved: "https://registry.npmjs.org/next/-/next-^15.4.5.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 node-cron:
+  🔖 version: "^4.2.1"
+  📦 resolved: "https://registry.npmjs.org/node-cron/-/node-cron-^4.2.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 ogl:
+  🔖 version: "^1.0.11"
+  📦 resolved: "https://registry.npmjs.org/ogl/-/ogl-^1.0.11.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 open-graph-scraper:
+  🔖 version: "^6.10.0"
+  📦 resolved: "https://registry.npmjs.org/open-graph-scraper/-/open-graph-scraper-^6.10.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 react:
+  🔖 version: "^19.1.1"
+  📦 resolved: "https://registry.npmjs.org/react/-/react-^19.1.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 react-dom:
+  🔖 version: "^19.1.1"
+  📦 resolved: "https://registry.npmjs.org/react-dom/-/react-dom-^19.1.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 react-player:
+  🔖 version: "^3.3.1"
+  📦 resolved: "https://registry.npmjs.org/react-player/-/react-player-^3.3.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 react-syntax-highlighter:
+  🔖 version: "^15.6.1"
+  📦 resolved: "https://registry.npmjs.org/react-syntax-highlighter/-/react-syntax-highlighter-^15.6.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 redis:
+  🔖 version: "^5.7.0"
+  📦 resolved: "https://registry.npmjs.org/redis/-/redis-^5.7.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 socket.io:
+  🔖 version: "^4.8.1"
+  📦 resolved: "https://registry.npmjs.org/socket.io/-/socket.io-^4.8.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 socket.io-client:
+  🔖 version: "^4.8.1"
+  📦 resolved: "https://registry.npmjs.org/socket.io-client/-/socket.io-client-^4.8.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 uuid:
+  🔖 version: "^11.1.0"
+  📦 resolved: "https://registry.npmjs.org/uuid/-/uuid-^11.1.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 webpack:
+  🔖 version: "^5.101.0"
+  📦 resolved: "https://registry.npmjs.org/webpack/-/webpack-^5.101.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 webpack-bundle-analyzer:
+  🔖 version: "^4.10.2"
+  📦 resolved: "https://registry.npmjs.org/webpack-bundle-analyzer/-/webpack-bundle-analyzer-^4.10.2.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 webpack-cli:
+  🔖 version: "^6.0.1"
+  📦 resolved: "https://registry.npmjs.org/webpack-cli/-/webpack-cli-^6.0.1.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "eslint/eslintrc"
+  📦 resolved: "https://registry.npmjs.org//-/-eslint/eslintrc.tgz"
+  🔒 integrity: "sha512-GOWjr5KtPNhA2WzY9hsOyBNWj1W4idM1tMRaWgJ2VaGGAIIcVUtk+jTgDmhLq7BhLyyyrHEPmd023LRBUMejqA=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "tailwindcss/typography"
+  📦 resolved: "https://registry.npmjs.org//-/-tailwindcss/typography.tgz"
+  🔒 integrity: "sha512-90cZhluYuPN/WNILQd8Kj+toAK3xFJ0zw9AjJtjx8BDbPUjEEQ0ChJOvOz2mpbf7/3zSeqAFx76kX39LaazE3w=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/crypto-js"
+  📦 resolved: "https://registry.npmjs.org//-/-types/crypto-js.tgz"
+  🔒 integrity: "sha512-FRkEs+JuTRAGDDcJUnWahGK4Lwyl8NgKbS4UKb304teCCtYHGqNBMnlWg7xFzj9E6Fhk6uyXINSgz9lKQpyT2Q=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/express"
+  📦 resolved: "https://registry.npmjs.org//-/-types/express.tgz"
+  🔒 integrity: "sha512-YRDkQLUBW2zpPH6rQVMYJ7eGRsAoFu5q/+DNOOwIrYBPJ/RwE+Fspsp3LT8PcUI13q5VH8F4wEjM6tQVP7ZKIw=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/howler"
+  📦 resolved: "https://registry.npmjs.org//-/-types/howler.tgz"
+  🔒 integrity: "sha512-TyBHVNvDj+rG2RiXa0I/rc622nAD0fZmut3UP6KSiH264LlfihbQfzA4gRjtjC+tfO5ovX6nvG31P/NzIfHSAQ=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/marked"
+  📦 resolved: "https://registry.npmjs.org//-/-types/marked.tgz"
+  🔒 integrity: "sha512-LcKO14Kjl7NyMDHVKinwjRH5gV1GvUhDz8Tfh1Ej9sq+G1SMZwBhwB01w8zIdwZYomTqB7fkKq139LLMNoYzTA=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/node"
+  📦 resolved: "https://registry.npmjs.org//-/-types/node.tgz"
+  🔒 integrity: "sha512-WWbLjcbrU556nq3MAWvS+tDY9ugseWKdhZ7auGohGEUk9oe9qwHHs75sMtgG2+onpmBPnX6YWI5CoBvMrdsYYw=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/react"
+  📦 resolved: "https://registry.npmjs.org//-/-types/react.tgz"
+  🔒 integrity: "sha512-3ljwWnjbb0UILnE+RQ958rUXiuIqh6wGvSjcJwVa4STMY00t8O6dxmSEAgKn0JhyIlwqpmSqa6H+b8g1xv7kLQ=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/react-dom"
+  📦 resolved: "https://registry.npmjs.org//-/-types/react-dom.tgz"
+  🔒 integrity: "sha512-ab9Oi+Grmtzejf50DMoUWOs472WpylOi4NV5j174dtWm6eCvC+myoi5tECR8CIH4QlPokk+xNM/8SzQgHCZ+8w=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/react-syntax-highlighter"
+  📦 resolved: "https://registry.npmjs.org//-/-types/react-syntax-highlighter.tgz"
+  🔒 integrity: "sha512-F6RVoBtUDHuIIgmpS6rRSkhtqGOXbqoTM0FqhMA+yGpo+JY+xgK7PBDkopytTQIBtISQQfKOcrQT8cEjdoMC3Q=="
+  ⚙️ type: runtime
+
+🐱 :
+  🔖 version: "types/socket.io"
+  📦 resolved: "https://registry.npmjs.org//-/-types/socket.io.tgz"
+  🔒 integrity: "sha512-IdQvkNilIsb2ecFyg4puhNNqeRQv/gY4SrypFe3BQQuD4X0TFNNdEMohGr6e+EDxIb9pCvCnWxe2oYgZj2V8MQ=="
+  ⚙️ type: runtime
+
+🐱 autoprefixer:
+  🔖 version: "^10.4.21"
+  📦 resolved: "https://registry.npmjs.org/autoprefixer/-/autoprefixer-^10.4.21.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 eslint:
+  🔖 version: "^9.32.0"
+  📦 resolved: "https://registry.npmjs.org/eslint/-/eslint-^9.32.0.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 eslint-config-next:
+  🔖 version: "^15.4.5"
+  📦 resolved: "https://registry.npmjs.org/eslint-config-next/-/eslint-config-next-^15.4.5.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 postcss:
+  🔖 version: "^8.5.6"
+  📦 resolved: "https://registry.npmjs.org/postcss/-/postcss-^8.5.6.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 tailwindcss:
+  🔖 version: "^4.1.11"
+  📦 resolved: "https://registry.npmjs.org/tailwindcss/-/tailwindcss-^4.1.11.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
+🐱 typescript:
+  🔖 version: "^5.8.3"
+  📦 resolved: "https://registry.npmjs.org/typescript/-/typescript-^5.8.3.tgz"
+  🔒 integrity: "sha512-AEHYbO4DUrbor46XVfvorW2xkSt7wu/VPRn/YM6Peaabusm8K7rCXZ+m2enkjYvMJB/gR3bCPBO6WisolmQ1cg=="
+  ⚙️ type: runtime
+
