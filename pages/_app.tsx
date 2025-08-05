@@ -873,7 +873,7 @@ const formatCountdown = (seconds: number) => {
 
   useEffect(() => {
     privateMessageSound.current = new Howl({
-      src: ['/sounds/notification.mp3'],
+      src: ['/sounds/private_notification.mp3'],
       volume: 0.5
     });
     publicMessageSound.current = new Howl({
