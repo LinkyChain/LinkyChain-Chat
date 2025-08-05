@@ -34,7 +34,7 @@ html, body, #__next {
 
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 20px;
   height: 8px;
 }
 
@@ -124,16 +124,7 @@ html, body, #__next {
 }
 
 
-input[type="text"],
-input[type="url"],
-textarea {
-  @apply p-3 rounded-lg bg-linkychain-dark-100 text-linkychain-gray-100 placeholder-linkychain-gray-200;
-}
 
-textarea {
-  min-height: 48px; 
-  line-height: 1.5;
-}
 
 
 

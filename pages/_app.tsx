@@ -78,20 +78,6 @@ const SocketProvider = ({ children }: { children: ReactNode }) => {
       console.log('Socket disconnected!');
     });
 
-    newSocket.on('message deleted', ({ messageId, isPrivate }: { messageId: string, isPrivate: boolean }) => {
-  if (isPrivate) {
-      setPrivateMessages(prev => {
-          const updatedState: { [userId: string]: Message[] } = {};
-          for (const userId in prev) {
-              updatedState[userId] = prev[userId].filter(msg => msg.id !== messageId);
-          }
-          return updatedState;
-      });
-  } else {
-      setMessages(prev => prev.filter(msg => msg.id !== messageId));
-  }
-});
-
     return () => {
       newSocket.off('connect');
       newSocket.off('disconnect');
@@ -548,44 +534,53 @@ const MessageBubble: React.FC<{
     }
   };
 
-  const renderLinkPreview = (message: LinkMessage) => {
-    const linkMessage = message as LinkMessage;
+ const renderLinkPreview = (message) => {
+    const linkMessage = message; 
     const url = decrypt(linkMessage.encryptedContent);
     const preview = linkMessage.linkPreview;
 
     return (
-      <div className="flex flex-col gap-2 bg-linkychain-dark-200 rounded-lg border border-linkychain-dark-100  overflow-hidden">
-        {preview?.image && (
-          <img
-            src={preview.image}
-            alt={preview.title || 'Link preview image'}
-            className="w-full h-32 object-cover"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-          />
+      <div className="flex flex-col gap-2 p-3 bg-linkychain-dark-200 rounded-lg border border-linkychain-dark-100">
+        
+        {linkMessage.text && (
+          <p className="text-linkychain-gray-100 break-words">
+            {linkMessage.text}
+          </p>
         )}
-        <div className="p-3">
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-linkychain-blue-500 hover:underline break-all block text-base font-semibold"
-            title="Open link in new tab"
-          >
-            {preview?.title || url}
-            <FontAwesomeIcon icon={faExternalLinkAlt} className="ml-1 text-xs" />
-          </a>
-          {preview?.description && (
-            <p className="text-sm text-linkychain-gray-200 mt-1 line-clamp-2">
-              {preview.description}
-            </p>
+
+        <div className="flex flex-col gap-2 rounded-lg border border-linkychain-dark-100 overflow-hidden">
+          {preview?.image && (
+            <img
+              src={preview.image}
+              alt={preview.title || 'Link preview image'}
+              className="w-full h-32 object-cover"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
           )}
-          <span className="text-xs text-linkychain-gray-300 mt-2 block break-all">
-            {url}
-          </span>
+          <div className="p-3">
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-linkychain-blue-500 hover:underline break-all block text-base font-semibold"
+              title="Open link in new tab"
+            >
+              {preview?.title || url}
+              <FontAwesomeIcon icon={faExternalLinkAlt} className="ml-1 text-xs" />
+            </a>
+            {preview?.description && (
+              <p className="text-sm text-linkychain-gray-200 mt-1 line-clamp-2">
+                {preview.description}
+              </p>
+            )}
+            <span className="text-xs text-linkychain-gray-300 mt-2 block break-all">
+              {url}
+            </span>
+          </div>
         </div>
       </div>
     );
-  };
+};
 
   const renderGif = (message: GifMessage) => {
     const gifMessage = message as GifMessage;
@@ -755,6 +750,9 @@ const HomePageContent: React.FC = () => {
 
   const privateMessageSound = useRef<Howl | null>(null);
   const publicMessageSound = useRef<Howl | null>(null);
+  const countdownAlertSound = useRef<Howl | null>(null);
+  const chatDeletedSound = useRef<Howl | null>(null);
+  const messageDeletedSound = useRef<Howl | null>(null);
 
   const [appStatus, setAppStatus] = useState<'active' | 'warning' | 'error'>('active');
   const [errorMessages, setTipMessages] = useState<string[]>([]);
@@ -798,6 +796,9 @@ const HomePageContent: React.FC = () => {
     if (socket) {
       socket.on('countdown update', (remainingSeconds: number) => {
         setCountdown(remainingSeconds);
+        if (remainingSeconds === 5 && countdownAlertSound.current) {
+          countdownAlertSound.current.play();
+        }
       });
     }
     return () => {
@@ -810,11 +811,42 @@ const HomePageContent: React.FC = () => {
     socket.on('server reload', () => {
       console.log('The server requested a reload. Reloading the page....');
       window.location.reload();
+      if (chatDeletedSound.current) {
+        chatDeletedSound.current.play();
+      }
     });
     return () => {
       socket.off('server reload');
     };
   }, []);
+
+
+  useEffect(() => {
+    if (!socket) return;
+
+    const handleMessageDeleted = ({ messageId, isPrivate }: { messageId: string, isPrivate: boolean }) => {
+        if (isPrivate) {
+            setPrivateMessages(prev => {
+                const updatedState: { [userId: string]: Message[] } = {};
+                for (const userId in prev) {
+                    updatedState[userId] = prev[userId].filter(msg => msg.id !== messageId);
+                }
+                return updatedState;
+            });
+        } else {
+            setMessages(prev => prev.filter(msg => msg.id !== messageId));
+        }
+        if (messageDeletedSound.current) {
+            messageDeletedSound.current.play();
+        }
+    };
+
+    socket.on('message deleted', handleMessageDeleted);
+
+    return () => {
+        socket.off('message deleted', handleMessageDeleted);
+    };
+}, [socket, setMessages, setPrivateMessages]);
 
 
 
@@ -847,6 +879,21 @@ const formatCountdown = (seconds: number) => {
     publicMessageSound.current = new Howl({
       src: ['/sounds/public_notification.mp3'],
       volume: 0.3
+    });
+
+    countdownAlertSound.current = new Howl({ 
+      src: ['/sounds/countdown-alert.mp3'],
+      volume: 0.5 
+    });
+
+    chatDeletedSound.current = new Howl({ 
+      src: ['/sounds/chat-deleted.mp3'],
+      volume: 0.5
+    });
+
+    messageDeletedSound.current = new Howl({
+      src: ['/sounds/message-deleted.mp3'],
+      volume: 0.5
     });
 
     const storedUserName = localStorage.getItem('linkychain_username');
@@ -1885,7 +1932,7 @@ const formatCountdown = (seconds: number) => {
             </div>
             <button
               onClick={() => setShowProfileMenu(true)}
-              className="w-8 h-8 flex items-center justify-center rounded-md text-linkychain-gray-200 hover:bg-linkychain-dark-200 transition-colors"
+              className="m-5 w-8 h-8 flex items-center justify-center rounded-md text-linkychain-gray-200 hover:bg-linkychain-dark-200 transition-colors"
               title="User Settings"
             >
               <FontAwesomeIcon icon={faCog} />
@@ -1971,8 +2018,8 @@ const formatCountdown = (seconds: number) => {
             )}
             
             <form onSubmit={handleSubmit} className="flex items-end gap-2 p-3 bg-linkychain-dark-100 rounded-lg">
-  <div className="flex flex-col flex-1 bg-linkychain-dark-200 rounded-lg overflow-hidden border border-linkychain-dark-100 duration-200">
-    <div className="flex items-center gap-1 p-2 border-b border-linkychain-dark-100">
+  <div className="flex-grow bg-linkychain-dark-200 rounded-lg overflow-hidden border border-linkychain-dark-100 duration-200">
+    <div className="items-center gap-1 p-2 border-b border-linkychain-dark-100">
       <button
         type="button"
         onClick={() => insertFormattedText('**', '**')}
@@ -2061,64 +2108,63 @@ const formatCountdown = (seconds: number) => {
       <FontAwesomeIcon icon={faPaperclip} />
     </label>
   </div>
-  <div className="relative flex-1 flex items-end">
-    {/* Questo div gestisce l'icona e il placeholder. Si nasconde quando si inizia a scrivere. */}
-    {textInput.length === 0 && (
-      <div className="absolute top-0 left-0 bottom-0 flex items-center pl-4 pr-2 text-linkychain-gray-300 pointer-events-none">
-        <FontAwesomeIcon icon={faKeyboard} className="mr-2" />
-        <span className="truncate">{placeholderText}</span>
-      </div>
-    )}
+  <div className="relative flex-1 flex items-end h-full min-w-[1300px]">
+  {textInput.length === 0 && (
+    <div className="absolute top-0 left-0 bottom-0 flex items-center pl-4 pr-2 text-linkychain-gray-300 pointer-events-none">
+      <FontAwesomeIcon icon={faKeyboard} className="mr-2" />
+      <span className="truncate">{placeholderText}</span>
+    </div>
+  )}
 
-    <textarea
-      ref={textInputRef}
-      value={textInput}
-      onChange={handleTyping}
-      onKeyDown={(e) => {
-        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-        const isCtrlOrCmd = isMac ? e.metaKey : e.ctrlKey;
-        
-        if (e.key === 'Enter' && !e.shiftKey) {
-          e.preventDefault();
-          handleSubmit(e as unknown as FormEvent);
-        }
-        if (isCtrlOrCmd && e.key === 'b') {
-          e.preventDefault();
-          insertFormattedText('**', '**');
-        }
-        if (isCtrlOrCmd && e.key === 'i') {
-          e.preventDefault();
-          insertFormattedText('*', '*');
-        }
-        if (isCtrlOrCmd && e.key === 'u') {
-          e.preventDefault();
-          insertFormattedText('__', '__');
-        }
-        if (isCtrlOrCmd && e.key === 'k') {
-          e.preventDefault();
-          insertFormattedText('[text here](url here)', '');
-        }
-        if (isCtrlOrCmd && e.altKey && e.key === 'c') {
-          e.preventDefault();
-          insertFormattedText('``` ', '```');
-        }
-        if (isCtrlOrCmd && e.key === '.') {
-          e.preventDefault();
-          setShowEmojiPicker(prev => !prev);
-          setShowGifPicker(false);
-        }
-        if (isCtrlOrCmd && e.key === 'g') {
-          e.preventDefault();
-          setShowGifPicker(prev => !prev);
-          setShowEmojiPicker(false);
-        }
-      }}
-      className="w-full bg-linkychain-dark-100 text-linkychain-gray-100 px-4 py-3 rounded-lg text-sm resize-none transition-all duration-200 custom-scrollbar-textarea focus:outline-none focus:ring-0 focus:border-transparent"
-      placeholder=""
-      rows={1}
-      style={{ maxHeight: '200px' }}
-    />
-  </div>
+  <textarea
+    ref={textInputRef}
+    value={textInput}
+    onChange={handleTyping}
+    onKeyDown={(e) => {
+      const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+      const isCtrlOrCmd = isMac ? e.metaKey : e.ctrlKey;
+      
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        handleSubmit(e as unknown as FormEvent);
+      }
+      if (isCtrlOrCmd && e.key === 'b') {
+        e.preventDefault();
+        insertFormattedText('**', '**');
+      }
+      if (isCtrlOrCmd && e.key === 'i') {
+        e.preventDefault();
+        insertFormattedText('*', '*');
+      }
+      if (isCtrlOrCmd && e.key === 'u') {
+        e.preventDefault();
+        insertFormattedText('__', '__');
+      }
+      if (isCtrlOrCmd && e.key === 'k') {
+        e.preventDefault();
+        insertFormattedText('[text here](url here)', '');
+      }
+      if (isCtrlOrCmd && e.altKey && e.key === 'c') {
+        e.preventDefault();
+        insertFormattedText('``` ', '```');
+      }
+      if (isCtrlOrCmd && e.key === '.') {
+        e.preventDefault();
+        setShowEmojiPicker(prev => !prev);
+        setShowGifPicker(false);
+      }
+      if (isCtrlOrCmd && e.key === 'g') {
+        e.preventDefault();
+        setShowGifPicker(prev => !prev);
+        setShowEmojiPicker(false);
+      }
+    }}
+    className="w-full bg-linkychain-dark-100 text-linkychain-gray-100 px-4 py-3 rounded-lg text-sm resize-none transition-all duration-200 custom-scrollbar-textarea focus:outline-none focus:ring-0 focus:border-transparent"
+    placeholder=""
+    rows={1}
+    style={{ maxHeight: '200px' }}
+  />
+</div>
 </div>
       
     </div>
