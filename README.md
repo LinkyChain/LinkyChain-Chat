@@ -82,7 +82,7 @@ Welcome to **LinkyChainChat**\! This isn't just another chat app. It's a real-ti
     The server will be running at `http://localhost:4723`.
 
 5.  **Enjoy the chat\! 🎉**
-    Open your browser and navigate to `http://localhost:4723`. Enter a username and start chatting in a secure and fun environment.
+    Open your browser and navigate to `http://localhost:4723`. Enter and start chatting in a secure and fun environment.
 
 ## Contributing 🤝
 
